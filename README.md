@@ -10,7 +10,7 @@ npm start
 
 
 URL:
-http://localhost:8000/app/index.html#/view1
-
+http://localhost:8000/app/index.html#/landing
+http://localhost:8000/app/index.html#/home
 
 
