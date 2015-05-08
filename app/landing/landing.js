@@ -40,7 +40,7 @@ angular.module('myApp.landing', ['ngRoute'])
             var serverPwd = "";
             for (var i = 0; i < results.length; i++) {
               var object = results[i];
-              alert(object.id + ' - ' + object.get('password'));
+             // alert(object.id + ' - ' + object.get('password'));
                serverPwd = object.get('password');
             }
               if(password == serverPwd){
@@ -55,7 +55,7 @@ angular.module('myApp.landing', ['ngRoute'])
 
           },
           error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
+           // alert("Error: " + error.code + " " + error.message);
             $scope.$apply(function() {
                 $scope.formSigninMsg = $sce.trustAsHtml('<div class="alert alert-warning">Following error happened in server.'+error.code+':'+error.message+' </div>');
             });
