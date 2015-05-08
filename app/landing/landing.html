@@ -1,40 +1,44 @@
 
-<div class="animate-switch-container"    ng-switch on="selection"  ng-controller="LandingCtrl">
+<div class="animate-switch-container"  ng-switch on="selection"  ng-controller="LandingCtrl">
 
 
 
-<div   ng-switch-when="signin" class="container" >
-    <div class="jumbotron" style="padding-bottom:0px;">
-        <h2> Login form</h2>
-    </div>
-    <form class="form-signin" role="form">
-        <input  ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <br/>
-        <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
+        <div   ng-switch-when="signin" class="container" >
+            <div class="jumbotron" style="padding-bottom:0px;">
+                <h2> Login form</h2>
+            </div>
+            <div ng-bind-html="formSigninMsg"></div>
+            <form class="form-signin" role="form">
+                <input  ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+                <br/>
+                <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
 
-        <button ng-click="login($event)" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <button ng-click="gotoSignup($event)" class="btn btn-lg btn-primary btn-block" type="button">Sign Up</button>
-    </form>
+                <button ng-click="login($event)" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <button ng-click="gotoSignup($event)" class="btn btn-lg btn-primary btn-block" type="button">Sign Up</button>
+            </form>
 
-</div>
+        </div>
 
 
-<div   ng-switch-when="signup" class="container"   >
-    <div class="jumbotron" style="padding-bottom:0px;">
-        <h2> Signup</h2>
-    </div>
-    <form class="form-signup" role="form">
-        <input  ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <br/>
-        <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
-        <br/>
-        <input ng-model="user.againpassword" type="password" class="form-control" placeholder="Password" required="">
-        <br/>
-        <button ng-click="signup($event)" class="btn btn-lg btn-primary btn-block" type="submit">SignUp</button>
 
-    </form>
+        <div   ng-switch-when="signup" class="container"   >
+            <div class="jumbotron" style="padding-bottom:0px;">
+                <h2> Signup</h2>
+            </div>
+            <div ng-bind-html="formMsg"></div>
 
-</div>
+            <form class="form-signup" role="form">
+                <input  ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+                <br/>
+                <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
+                <br/>
+                <input ng-model="user.againpassword" type="password" class="form-control" placeholder="Password" required="">
+                <br/>
+                <button ng-click="signup($event)" class="btn btn-lg btn-primary btn-block" type="submit">SignUp</button>
+
+            </form>
+
+        </div>
 
 
 </div>
