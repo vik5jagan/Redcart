@@ -9,10 +9,18 @@ angular.module('myApp.landing', ['ngRoute'])
   });
 }])
 
-.controller('LandingCtrl', ['$scope','$location',function($scope,$location) {
+    .controller('LandingCtrl', ['$scope','$location',function($scope,$location) {
 
       console.log("Invoked the LandingCtrl:");
       $scope.user = {};
+
+      $scope.init = function () {
+        $scope.selection = "signin";
+
+      };
+
+      $scope.init();
+
       $scope.login = function (e){
 
         var email = $scope.user.email;
@@ -32,7 +40,23 @@ angular.module('myApp.landing', ['ngRoute'])
 
         }
 
+      };
+
+      $scope.gotoSignup = function (e){
+
+        console.log("signup button c1lick3ed !!!");
+
+        $scope.selection = "signup";
+      };
+
+      $scope.signup = function (e){
+
+        console.log("signup button c1licked !!!");
+
+        $scope.selection = "signin";
       }
 
 
-}]);
+
+
+    }]);
